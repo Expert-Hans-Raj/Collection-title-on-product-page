@@ -1,0 +1,16 @@
+    {% assign product_collection = collection.title | link_to: collection.url %}
+    {% unless product_collection == blank %}
+    <div class="product_meta">
+    <span class="posted_in">Category:  {{ product_collection }} </span>
+    </div>
+
+    {% endunless %}
+    
+    
+    
+    
+     <h3 class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}">
+            <a href="{{ card_product.url  | within:collection }}" class="full-unstyled-link">
+              {{ card_product.title | escape }}
+            </a>
+          </h3>
